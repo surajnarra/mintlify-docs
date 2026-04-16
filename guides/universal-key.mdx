@@ -1,0 +1,69 @@
+---
+title: Universal Key
+description: "One API key for all your LLM needs"
+---
+
+# Universal Key
+
+The Universal Key is a single API key that gives you access to all LLM providers supported by Emergent — no need to juggle multiple provider keys.
+
+<img
+  src="/images/universal-key.png"
+  alt="Universal Key settings"
+/>
+
+## Accessing Your Key
+
+Open **Account Settings** and click the **Universal Key** tab.
+
+## Key Details
+
+Your Universal Key section includes:
+
+### Your Key
+
+Your API key is displayed in a masked format (e.g., `sk-emergent-bE*****`). Use the controls to:
+
+- **Copy** — Copy the key to your clipboard
+- **Disable** — Temporarily deactivate the key
+- **Regenerate** — Create a new key (the old key will stop working)
+
+<Warning>
+  Regenerating your key will invalidate the previous key immediately. Update any applications using the old key.
+</Warning>
+
+### API Key Balance
+
+Your Universal Key has its own credit balance, separate from your main account balance. This lets you control API spending independently.
+
+- **Current balance** — Shows available credits for API usage
+- **Add Balance** — Purchase additional API credits
+
+### Auto Recharge
+
+Enable automatic recharging to keep your API uninterrupted:
+
+- **Amount** — Set how many credits to add when the balance hits zero (default: 5 credits)
+- **Toggle** — Enable or disable auto-recharge
+
+## LLM Providers
+
+Click the **LLM Providers** tab to see all available AI model providers accessible through your Universal Key. Use the key with any compatible API client by pointing it at Emergent's API endpoint.
+
+## Using the Universal Key
+
+Use your Universal Key like any standard LLM API key. Point your API client to Emergent's endpoint and include the key in the authorization header:
+
+```bash
+curl https://api.emergent.sh/v1/chat/completions \
+  -H "Authorization: Bearer sk-emergent-your-key-here" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "claude-4.5-sonnet",
+    "messages": [{"role": "user", "content": "Hello!"}]
+  }'
+```
+
+<Tip>
+  The Universal Key is especially useful if you want to use Emergent-supported models in your own applications without managing separate API keys for each provider.
+</Tip>

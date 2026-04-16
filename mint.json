@@ -1,0 +1,77 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Emergent Documentation",
+  "logo": {
+    "dark": "/images/logo-dark.svg",
+    "light": "/images/logo-light.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#2563EB",
+    "light": "#60A5FA",
+    "dark": "#1E40AF",
+    "anchors": {
+      "from": "#2563EB",
+      "to": "#60A5FA"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Sign In",
+      "url": "https://app.emergent.sh"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Get Started",
+    "url": "https://app.emergent.sh"
+  },
+  "tabs": [
+    {
+      "name": "Guides",
+      "url": "guides"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Community",
+      "icon": "discord",
+      "url": "https://emergent.sh"
+    },
+    {
+      "name": "Blog",
+      "icon": "newspaper",
+      "url": "https://emergent.sh/learn"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": [
+        "introduction",
+        "quickstart"
+      ]
+    },
+    {
+      "group": "Guides",
+      "pages": [
+        "guides/app-builder",
+        "guides/wingman",
+        "guides/showcase"
+      ]
+    },
+    {
+      "group": "Account",
+      "pages": [
+        "guides/account-settings",
+        "guides/credits-and-billing",
+        "guides/universal-key"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "x": "https://x.com/emergentlabs",
+    "linkedin": "https://www.linkedin.com/company/emergentlabs",
+    "youtube": "https://www.youtube.com/@emergentlabs",
+    "instagram": "https://www.instagram.com/emergentlabs"
+  }
+}

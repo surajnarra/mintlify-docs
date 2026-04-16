@@ -1,91 +1,85 @@
 ---
-title: Account Settings
-description: "Manage your profile, preferences, and connected services"
+title: "Account Settings"
+description: "Modal launched from the avatar menu with five tabs: profile, Universal Key, Manage Agents, Preferences, and Credit Usage."
 ---
 
-# Account Settings
+## Overview
 
-Access your account settings by clicking your avatar in the top-right corner and selecting **Account Settings**.
+The avatar button in the top-right chrome opens the account menu, which
+exposes quick actions (upgrade, referral, language) and a link into the
+**Account Settings** modal. The modal groups configuration into five tabs, the
+first of which shows your profile and current plan.
 
-<img
-  src="/images/account-settings.png"
-  alt="Account settings"
-/>
+<Frame caption="Avatar menu — quick actions and entry point to Account Settings">
+  ![Avatar menu](/images/0007_avatar_menu.png)
+</Frame>
 
-## Profile
+## Avatar menu items
 
-The default tab shows your profile information:
+<CardGroup cols={2}>
+  <Card title="Upgrade" icon="tag">
+    Shortcut to the pricing modal — see [Pricing](/guides/pricing).
+  </Card>
+  <Card title="Refer and Earn $200" icon="gift">
+    Opens the referral sharing modal — see [Referrals](/guides/referrals).
+  </Card>
+  <Card title="Account Settings" icon="user-gear">
+    Opens the tabbed settings modal covered on this page.
+  </Card>
+  <Card title="Language" icon="language">
+    Switches the app locale — see [Language](/guides/language).
+  </Card>
+  <Card title="Contact us" icon="headset">
+    Routes to Emergent's expert-call intake inside `help.emergent.sh`.
+  </Card>
+  <Card title="Connect to Github" icon="github">
+    Starts the GitHub integration flow — see [GitHub integration](/guides/github-integration).
+  </Card>
+  <Card title="Community" icon="discord">
+    Opens the Emergent Discord for discussion and support requests.
+  </Card>
+  <Card title="Help Center" icon="circle-question">
+    Deep-links into `help.emergent.sh` with the articles index.
+  </Card>
+</CardGroup>
 
-| Field | Description |
-|-------|-------------|
-| **Email** | The email address linked to your account (read-only) |
-| **Profile picture** | Your avatar displayed publicly across the platform |
-| **Name** | Your display name — click the edit icon to change it |
-| **Phone Number** | Add and verify a phone number to receive WhatsApp updates and alerts |
-| **Personal Plan** | Shows your current plan (Free, Standard, or Pro) with an option to upgrade |
+## Settings tabs
 
-## Manage Agents
+<Frame caption="Account settings modal open on the ExTrupeers (profile) tab">
+  ![Account settings tab](/images/0008_account_settings.png)
+</Frame>
 
-Create, edit, and manage custom AI agents tailored to your specific workflows.
+<CardGroup cols={2}>
+  <Card title="Profile" icon="user" href="/guides/account-settings#profile">
+    Email, profile picture, display name, and current plan tier.
+  </Card>
+  <Card title="Universal Key" icon="key" href="/guides/universal-key">
+    LLM routing key, balance, and auto-recharge.
+  </Card>
+  <Card title="Manage Agents" icon="robot" href="/guides/manage-agents">
+    Main agents, sub-agents, and MCP tools (Pro plan).
+  </Card>
+  <Card title="Preferences" icon="sliders" href="/guides/preferences">
+    Language and auto-summarisation defaults.
+  </Card>
+  <Card title="Credit Usage" icon="gauge" href="/guides/credit-usage">
+    Balance breakdown and per-project history.
+  </Card>
+</CardGroup>
 
-<img
-  src="/images/manage-agents.png"
-  alt="Manage Agents"
-/>
+## Profile tab
 
-Agents are organized into three types:
+The first tab shows the signed-in account's email, profile picture (used
+publicly anywhere the product surfaces your identity), editable display name,
+and the currently attached personal plan. An **Upgrade Plan** button in the
+Personal Plan row routes to the Plans modal.
 
-- **Main agents** — Primary agents that handle your core tasks
-- **Sub-agents** — Specialized agents that work under main agents
-- **MCP Tools** — Model Context Protocol tools that extend agent capabilities
+<Frame caption="Profile tab — account email, display name, and plan status">
+  ![Profile tab](/images/0013_settings_account.png)
+</Frame>
 
-<Note>
-  Custom agents require a **Pro** plan. Upgrade to create domain-specific agents with flexible prompts and customization.
-</Note>
+## Related
 
-## Preferences
-
-Customize how Emergent works for you.
-
-<img
-  src="/images/preferences.png"
-  alt="Preferences"
-/>
-
-### Language
-
-Select your preferred language. The interface supports multiple languages.
-
-### Appearance
-
-Choose your visual theme:
-
-- **Light** — Light background with dark text
-- **Dark** — Dark background with light text
-- **Follow System** — Automatically matches your operating system's theme setting
-
-### Auto-summarisation in Chat
-
-When enabled, Emergent will automatically summarize conversations when the context fills up, allowing you to keep working in the same chat without losing context. This is enabled by default.
-
-## Quick Actions from the Profile Menu
-
-Click your avatar to access these shortcuts without opening the full settings:
-
-<img
-  src="/images/profile-dropdown.png"
-  alt="Profile dropdown menu"
-/>
-
-| Action | Description |
-|--------|-------------|
-| **Credits** | View your current credit balance |
-| **Upgrade** | Upgrade your subscription plan |
-| **Refer and Earn $200** | Get your referral link to earn credits |
-| **Account Settings** | Open the full settings panel |
-| **Language** | Quick language switcher |
-| **Contact us** | Reach the Emergent support team |
-| **Connect to Github** | Link your GitHub account for code saving and deployment |
-| **Community** | Join the Emergent community |
-| **Help Center** | Access documentation and support resources |
-| **Logout** | Sign out of your account |
+- [Preferences](/guides/preferences) — general toggles and defaults.
+- [Pricing](/guides/pricing) — plan tier the Upgrade Plan button routes into.
+- [Credit usage](/guides/credit-usage) — detail of the spend shown on the profile tab.

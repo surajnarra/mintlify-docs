@@ -1,0 +1,70 @@
+---
+title: "Getting Started"
+description: "Walk through the first five surfaces a new Emergent user touches: home, project, task, preview, and credit usage."
+---
+
+## Core concepts
+
+Emergent centers on four primary nouns. Understand these before writing a prompt.
+
+<CardGroup cols={2}>
+  <Card title="Project" icon="folder">
+    A workspace that groups related builds, tracks credit usage, and optionally enforces a monthly budget. Every account starts with a default project.
+  </Card>
+  <Card title="Task" icon="wand-magic-sparkles">
+    A single natural-language build request. Tasks belong to a project, pick a build mode (Full Stack, Mobile, or Landing Page), and consume credits as the agent runs.
+  </Card>
+  <Card title="Tab" icon="window-restore">
+    A persistent surface in the App builder chrome. `Home` is always present; each running or previewed build opens in its own tab alongside it.
+  </Card>
+  <Card title="Credit" icon="coin">
+    The billing unit that meters agent work. Plans grant a monthly allotment; referrals, top-ups, and promo codes add more.
+  </Card>
+</CardGroup>
+
+## First workflow
+
+<Steps>
+  <Step title="Pick a build mode">
+    On `Home`, choose **Full Stack App**, **Mobile App**, or **Landing Page** above the task input. The placeholder prompt, suggestion chips, and default container template change to match the chosen mode.
+  </Step>
+  <Step title="Write (or speak) a prompt">
+    Describe what you want in the task textarea. Click a suggestion chip to auto-fill a starter idea, or press the microphone button to dictate.
+  </Step>
+  <Step title="Review advanced controls">
+    Open the task settings popover to confirm the container template, model (Claude 4.5 Sonnet by default), and any MCP tools the agent should use.
+  </Step>
+  <Step title="Submit and open the preview">
+    Press the submit arrow. Emergent opens a new tab in the App builder chrome with a live-rendering preview panel and the agent's running log.
+  </Step>
+  <Step title="Remix or iterate">
+    Use **Remix this template** on any Showcase card, or refine your prompt in the same tab. Completed builds stay in the tab bar until you close them.
+  </Step>
+</Steps>
+
+## Recommended reading order
+
+1. [Home workspace](/guides/home) — anatomy of the main task surface.
+2. [Projects](/guides/projects) — workspace switcher and membership.
+3. [Advanced controls](/guides/task-advanced-controls) — model, template, and MCP selection.
+4. [Live preview](/guides/preview) — the tabbed preview view.
+5. [Credit usage](/guides/credit-usage) — how spend is tracked across projects.
+6. [Pricing](/guides/pricing) — Standard vs Pro plan capabilities.
+
+## Keyboard-first usage
+
+The app does not override browser shortcuts. The most useful defaults are:
+
+- **Mod+Enter** — submit the task from the task input when focused.
+- **Escape** — dismiss any open modal (pricing, referral, account settings, template picker).
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Account settings" icon="user-gear" href="/guides/account-settings">
+    Configure your profile, plan, and Universal Key.
+  </Card>
+  <Card title="Sitemap" icon="map" href="/reference/sitemap">
+    See the full set of surfaces covered in this documentation.
+  </Card>
+</CardGroup>

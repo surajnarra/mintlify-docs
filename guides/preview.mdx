@@ -1,0 +1,48 @@
+---
+title: "Live Preview"
+description: "The dedicated tab at /chat that renders a generated or remixed application across desktop, tablet, and mobile viewports."
+---
+
+## Overview
+
+Every build tab opens at `/chat` with a split layout: a left sidebar shows the
+project description and metadata, and the main canvas renders the compiled
+application inside an iframe. A viewport picker in the panel header cycles
+between desktop, tablet, and mobile widths without reloading the page.
+
+<Frame caption="Preview tab rendering a remixed landing-page template">
+  ![Preview tab — Auramax example](/images/0053_chat_preview_view.png)
+</Frame>
+
+## Panel controls
+
+<CardGroup cols={2}>
+  <Card title="Viewport picker" icon="display">
+    Three icon toggles (desktop / tablet / mobile) redraw the iframe at the matching breakpoint. The default is desktop.
+  </Card>
+  <Card title="Remix this template" icon="shuffle">
+    Forks the template into a new tab scoped to your active project, leaving the original preview intact.
+  </Card>
+  <Card title="Open in new tab" icon="arrow-up-right-from-square">
+    Pops the preview URL into a standalone browser tab for full-window testing.
+  </Card>
+  <Card title="Refresh" icon="arrow-rotate-right">
+    Reloads the iframe source without closing the tab or rebuilding the application.
+  </Card>
+</CardGroup>
+
+## Sidebar content
+
+The left sidebar summarises the current preview: title, short description, and
+a close (✕) control that returns focus to `Home`. Closing the sidebar does not
+close the tab — it only hides the panel.
+
+<Frame caption="Preview detail — sidebar, viewport controls, and iframe render">
+  ![Preview detail](/images/0052_showcase_preview_detail.png)
+</Frame>
+
+## Related
+
+- [App builder](/guides/app-builder) — the tab chrome that hosts every preview.
+- [Templates & Showcase](/guides/templates-showcase) — source of most previewed templates.
+- [Home workspace](/guides/home) — origin point for task submissions that open here.

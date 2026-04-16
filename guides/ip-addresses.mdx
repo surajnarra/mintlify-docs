@@ -1,0 +1,57 @@
+---
+title: "IP Addresses"
+description: "Static outbound IP ranges Emergent uses for GitHub, webhook, and external API traffic — whitelist these in network policies."
+---
+
+## Overview
+
+Emergent services use a fixed pool of outbound IP addresses for any traffic
+that originates from the platform (for example, when pushing code to your
+GitHub repository or calling an external API from a generated build). The
+`/ip-addresses` page exposes the canonical list so operators can whitelist
+them in firewalls, VPCs, or SaaS network rules.
+
+<Frame caption="IP Addresses support page — static outbound list">
+  ![IP Addresses page](/images/0028_ip_addresses_page.png)
+</Frame>
+
+## Outbound IP addresses
+
+```text
+34.55.174.138
+34.41.192.254
+35.184.194.43
+34.9.233.22
+35.226.221.174
+35.226.93.127
+34.69.195.180
+130.211.210.175
+34.61.212.41
+34.55.129.30
+```
+
+These addresses are stable and will not change without notice. If Emergent
+ever rotates them, the page will be updated before the cutover.
+
+## When to whitelist
+
+<CardGroup cols={2}>
+  <Card title="GitHub Enterprise / self-hosted" icon="github">
+    Add the range to your GitHub Enterprise allowlist so Emergent's GitHub app can push commits and read repository contents.
+  </Card>
+  <Card title="Private APIs" icon="server">
+    If a generated build calls into a private service behind network ACLs, allow the outbound list to reach the service.
+  </Card>
+  <Card title="Webhook destinations" icon="bell">
+    Accept inbound webhooks originated by Emergent by allowing the same outbound addresses.
+  </Card>
+  <Card title="SaaS tools with IP restrictions" icon="shield-check">
+    Some tools (e.g. enterprise DBs) scope API access by IP. Whitelist this list to unblock MCP integrations.
+  </Card>
+</CardGroup>
+
+## Related
+
+- [GitHub integration](/guides/github-integration) — primary consumer of the outbound IP list.
+- [MCP tools](/guides/mcp-tools) — external integrations that may require IP allowlisting.
+- [Terms of service](/guides/terms) — platform agreement covering network behavior.

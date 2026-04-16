@@ -1,0 +1,50 @@
+---
+title: "Projects"
+description: "Isolated workspaces that own prompts, builds, credit usage, and member access — one account can hold many."
+---
+
+## Overview
+
+A **Project** is the top-level container for everything you build on Emergent.
+Tasks, preview tabs, credit spend, and member access all scope to a project.
+Every account ships with one default project (named after your profile) and
+can create additional projects from the workspace switcher above the Home
+hero.
+
+<Frame caption="Workspace switcher open above the Home hero">
+  ![Workspace switcher](/images/0006_workspace_switcher_menu.png)
+</Frame>
+
+## Switcher anatomy
+
+<CardGroup cols={2}>
+  <Card title="Active project" icon="circle-check">
+    The top row of the switcher shows the current project, its owner, and member count. A check mark indicates it is selected.
+  </Card>
+  <Card title="Create new project" icon="plus">
+    The footer action opens the **Create a project** modal. See [Create a project](/guides/create-project).
+  </Card>
+</CardGroup>
+
+## Membership
+
+- Each project has exactly one **Owner** (the account that created it).
+- Projects show a "• N member(s)" hint next to the name. Inviting collaborators
+  moves the project from a personal to a shared workspace.
+- Access-controlled features (private builds, shared GitHub repos) scope to
+  the project; changing the active project hot-swaps the task input's project
+  pill accordingly.
+
+<Frame caption="Workspace switcher with the primary project highlighted">
+  ![Workspace switcher with project](/images/0044_workspace_switcher_with_project.png)
+</Frame>
+
+<Frame caption="Home with the project pill visible above the hero">
+  ![Home — project context](/images/0027_projects_page.png)
+</Frame>
+
+## Related
+
+- [Create a project](/guides/create-project) — walkthrough of the creation modal.
+- [Credit usage](/guides/credit-usage) — per-project spend history and limits.
+- [Pricing](/guides/pricing) — plan-gated features like private project hosting.

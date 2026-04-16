@@ -1,0 +1,55 @@
+---
+title: "GitHub Integration"
+description: "Sync generated code to a GitHub repository, push commits as the agent iterates, and whitelist Emergent's outbound IP ranges."
+---
+
+## Overview
+
+The GitHub icon on the task input opens the repository connector. Once the
+integration is authorized, each build tab can push its generated code to a
+GitHub repository for versioning, code review, and deployment outside of
+Emergent. The feature gates behind the Standard plan.
+
+<Frame caption="GitHub connector launched from the task input">
+  ![GitHub connection](/images/0017_github_connection.png)
+</Frame>
+
+## Setup
+
+<Steps>
+  <Step title="Connect your GitHub account">
+    Open the avatar menu and click **Connect to Github**. Authorize the Emergent GitHub App for the organizations you want to publish into.
+  </Step>
+  <Step title="Link a repository">
+    On the task input, click the GitHub icon and pick a repository (or create a new one). The selected repo is remembered per project.
+  </Step>
+  <Step title="Allow outbound traffic">
+    If your repository sits behind firewall rules, whitelist the Emergent outbound IP ranges in [IP addresses](/guides/ip-addresses).
+  </Step>
+  <Step title="Push builds">
+    Subsequent builds in that project write commits to the linked repository. Disconnect any time from the same connector.
+  </Step>
+</Steps>
+
+## Connecting from the menu
+
+<Frame caption="Connect to Github entry point in the avatar menu">
+  ![GitHub connect modal](/images/0040_github_connect_modal.png)
+</Frame>
+
+## Requirements
+
+<CardGroup cols={2}>
+  <Card title="Standard plan or higher" icon="tag">
+    GitHub integration is listed among **Standard** plan features alongside private project hosting and fork tasks.
+  </Card>
+  <Card title="Repo-level access" icon="lock">
+    The Emergent GitHub App requests write access to the repositories you explicitly install it on; no organization-wide scope is requested.
+  </Card>
+</CardGroup>
+
+## Related
+
+- [IP addresses](/guides/ip-addresses) — outbound IPs used when Emergent reaches GitHub.
+- [Pricing](/guides/pricing) — plans that unlock GitHub integration.
+- [Account settings](/guides/account-settings) — where to revoke the GitHub connection.

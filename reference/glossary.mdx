@@ -1,0 +1,118 @@
+---
+title: "Glossary"
+description: "Alphabetical definitions for every domain term used in the Emergent documentation."
+---
+
+## A
+
+### Advanced Controls
+The popover reached from the gear icon on the task input. Exposes three
+per-task overrides: MCP tools, container template, and model. See
+[Advanced controls](/guides/task-advanced-controls).
+
+### App builder
+The multi-tab chrome at the top of the app. Holds the fixed `Home` tab and
+one tab per active build session. See [App builder](/guides/app-builder).
+
+## B
+
+### Build mode
+One of three initial build configurations: **Full Stack App**, **Mobile App**,
+or **Landing Page**. Selecting a mode changes the default container template
+and the suggestion chips shown under the task input.
+
+## C
+
+### Container template
+The Docker image that the agent runs inside. Published under
+`us-central1-docker.pkg.dev/emergent-default/emergent-container-hub/`; the
+default Full Stack template is `fastapi_react_mongo_shadcn_base_image`.
+
+### Credit
+The billing unit Emergent meters agent work in. See
+[Credit usage](/guides/credit-usage).
+
+## E
+
+### E2 Agent
+Pro-plan feature: a higher-capability agent variant optimized for
+multi-step full-stack work.
+
+## F
+
+### Fork tasks
+Standard-plan feature that lets an existing task be cloned into a parallel
+variant, useful for A/B-ing prompts or testing model changes.
+
+## G
+
+### GitHub integration
+Connector that lets Emergent push builds to a GitHub repository. Requires
+Standard or higher and an installation of the Emergent GitHub App. See
+[GitHub integration](/guides/github-integration).
+
+## M
+
+### MCP
+Model Context Protocol. Standard for exposing external tools (databases,
+design apps, memory stores) to an LLM agent. Emergent's MCP picker enables
+built-in connectors and custom servers. See [MCP tools](/guides/mcp-tools).
+
+### Main agent
+A custom orchestrator agent defined in **Manage Agents**. Delegates to
+sub-agents and has access to a specified MCP tool list.
+
+## P
+
+### Plan credits
+Credits granted by an active subscription and refreshed each billing cycle.
+Distinct from Top-up credits and Free credits. See
+[Credit usage](/guides/credit-usage).
+
+### Preview
+Action on a Showcase card that renders the built app in a live iframe inside
+the App builder without consuming credits. Opens in a new tab at `/chat`.
+
+### Project
+The top-level container for prompts, tasks, and credit usage. Every account
+has at least one. See [Projects](/guides/projects).
+
+## R
+
+### Remix
+Action on a Showcase card that forks a template into a new tab scoped to the
+active project, including its prompt, container template, and configuration.
+
+## S
+
+### Sub-agent
+A focused worker agent created in **Manage Agents**. Main agents delegate
+narrow sub-tasks to sub-agents during a build.
+
+### Suggestion chip
+One of the three pre-filled prompt ideas shown under the task input. Changes
+per build mode.
+
+## T
+
+### Top-up credits
+Credits purchased as a one-off outside of a subscription. Tracked separately
+from Plan credits in Credit Usage.
+
+## U
+
+### Universal Key
+Emergent's single `sk-emergent-…` API key. Routes requests to every
+supported LLM provider and maintains its own pooled balance with
+auto-recharge. See [Universal Key](/guides/universal-key).
+
+### Ultra thinking
+Pro-plan feature — extended reasoning mode that increases model compute time
+on complex tasks.
+
+## W
+
+### Wingman
+Higher-agency build mode available from a dedicated switcher pill in the
+App builder chrome. Runs longer autonomous sessions with less per-step
+confirmation. See [Wingman](/guides/wingman).

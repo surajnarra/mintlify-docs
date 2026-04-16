@@ -1,0 +1,61 @@
+---
+title: "MCP Tools"
+description: "Model Context Protocol connectors that give an Emergent agent access to external apps, databases, and memory during a build."
+---
+
+## Overview
+
+**MCP Tools** let an Emergent agent interact with external services through
+the Model Context Protocol. Enable them from Advanced Controls → **Select
+MCPs to use** before submitting a task. First-party integrations ship with
+OAuth or API-key configuration; custom MCP servers can be added by URL.
+
+<Frame caption="MCP picker listing first-party integrations and the custom server entry">
+  ![MCP tools selector](/images/0015_mcp_tools_selector.png)
+</Frame>
+
+## Built-in connectors
+
+<CardGroup cols={2}>
+  <Card title="Stitch MCP" icon="palette">
+    Connects the agent to Google Stitch for UI designs. Requires a Stitch API key (labelled **Key needed**).
+  </Card>
+  <Card title="Memory MCP" icon="brain">
+    Enables persistent memory across the agent's chat context — no external key required; toggled on per task.
+  </Card>
+  <Card title="Supabase MCP" icon="database">
+    Gives the agent read and write access to a Supabase project. Requires a Supabase service role key.
+  </Card>
+  <Card title="Notion MCP" icon="book">
+    Connects the agent to Notion workspaces for reading and writing pages. Requires a Notion integration token.
+  </Card>
+</CardGroup>
+
+## Custom servers
+
+The **New MCP Server** row at the top of the picker opens a configuration
+form for arbitrary MCP endpoints. Provide a server URL and any authentication
+headers; the agent then negotiates the protocol handshake at task start.
+
+## Configuration flow
+
+<Steps>
+  <Step title="Open Advanced Controls">
+    Click the gear icon on the task input to reveal the Advanced Controls panel.
+  </Step>
+  <Step title="Open the MCP picker">
+    Click **Select MCP Tools**. The modal lists first-party integrations and any custom servers you've registered.
+  </Step>
+  <Step title="Configure keys">
+    For connectors flagged **Key needed**, click **Configure** to paste an API key or OAuth token. Memory MCP skips this step and uses a simple on/off toggle.
+  </Step>
+  <Step title="Select and submit">
+    Check the connectors you want the agent to use for this task, close the picker, and submit the prompt as usual.
+  </Step>
+</Steps>
+
+## Related
+
+- [Advanced controls](/guides/task-advanced-controls) — where the MCP picker is launched from.
+- [Universal Key](/guides/universal-key) — related primitive for routing LLM provider calls.
+- [Preferences](/guides/preferences) — persist MCP defaults across tasks.

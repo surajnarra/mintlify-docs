@@ -1,0 +1,39 @@
+---
+title: "Preferences"
+description: "Account-level defaults that shape how Emergent behaves across every project — language, auto-summarisation, and related toggles."
+---
+
+## Overview
+
+The **Preferences** tab of Account Settings collects toggles that apply across
+every project and task. The two headline controls are display language and
+auto-summarisation of long agent chats.
+
+<Frame caption="Preferences tab — language picker and auto-summarisation toggle">
+  ![Preferences](/images/0011_settings_preferences.png)
+</Frame>
+
+## Controls
+
+<CardGroup cols={2}>
+  <Card title="Language" icon="language">
+    Drop-down that matches the avatar-menu **Language** shortcut. Supported values include English, Español, Français, Italiano, Português (Brazil), and Português (Portugal).
+  </Card>
+  <Card title="Auto-summarisation in chat" icon="compress">
+    When enabled, Emergent compresses long conversations into a summary as the context window fills, letting you keep working in the same chat. A **Learn more** link deep-links to the help-center article.
+  </Card>
+</CardGroup>
+
+## When auto-summarisation matters
+
+Large agent runs can saturate the model's context window. Auto-summarisation
+rewrites older turns into a condensed form so the most recent discussion and
+the task's goals remain in context. Disable it if you need complete verbatim
+history (for example, when debugging a specific transcript) at the cost of
+hitting the context limit sooner.
+
+## Related
+
+- [Language](/guides/language) — the avatar-menu shortcut that pairs with this setting.
+- [Account settings](/guides/account-settings) — parent modal and other tabs.
+- [Credit usage](/guides/credit-usage) — costs tied to the context-window work auto-summarisation saves.

@@ -1,0 +1,55 @@
+---
+title: "Manage Agents"
+description: "Create, edit, and manage custom agent definitions, sub-agents, and MCP tool bindings — available on the Pro plan."
+---
+
+## Overview
+
+**Manage Agents** is the Account Settings tab where you create domain-specific
+agents that extend the default Emergent build behavior. The tab is split into
+three sub-tabs: **Main agents**, **Sub-agents**, and **MCP Tools**. On the
+free plan the feature is locked behind an **Upgrade to Pro** CTA.
+
+<Frame caption="Manage Agents empty state with Upgrade to Pro entry point">
+  ![Manage Agents](/images/0010_settings_manage_agents.png)
+</Frame>
+
+## Sub-tabs
+
+<CardGroup cols={2}>
+  <Card title="Main agents" icon="user-tie">
+    Top-level custom agents invoked as orchestrators. Each agent has a system prompt, model selection, and access list of sub-agents and MCP tools.
+  </Card>
+  <Card title="Sub-agents" icon="users">
+    Worker agents scoped to a specific task (e.g. code generation, design review). Main agents delegate to sub-agents during a build.
+  </Card>
+  <Card title="MCP Tools" icon="plug">
+    Per-agent allow-list of MCP connectors. Overrides any task-level selection made from Advanced Controls.
+  </Card>
+  <Card title="Upgrade gate" icon="lock">
+    Free accounts see a "Build domain specific custom agents" marketing card with a direct **Upgrade to Pro** button.
+  </Card>
+</CardGroup>
+
+## Workflow
+
+<Steps>
+  <Step title="Upgrade to Pro">
+    Custom agents are gated to the Pro plan — click **Upgrade to Pro** from the empty state or the pricing modal to unlock the editor.
+  </Step>
+  <Step title="Define a main agent">
+    Give the agent a name, system prompt, and preferred model. Optionally attach sub-agents and MCP tools.
+  </Step>
+  <Step title="Create supporting sub-agents">
+    Add focused sub-agents that the main agent can delegate to. Each sub-agent has its own prompt and tool list.
+  </Step>
+  <Step title="Invoke from a task">
+    Select your custom agent in the task form to route the prompt through your orchestrator instead of the default Emergent agent.
+  </Step>
+</Steps>
+
+## Related
+
+- [Pricing](/guides/pricing) — Pro plan capabilities, including custom agents.
+- [MCP tools](/guides/mcp-tools) — tools that agents can be granted access to.
+- [Advanced controls](/guides/task-advanced-controls) — per-task overrides that interact with agent-level bindings.

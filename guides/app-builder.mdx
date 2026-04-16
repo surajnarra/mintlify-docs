@@ -1,136 +1,61 @@
 ---
-title: App Builder
-description: "Build web and mobile applications through conversational AI"
+title: "App Builder"
+description: "The tabbed shell that holds the Home workspace and every active build session side-by-side."
 ---
 
-# App Builder
+## Overview
 
-The App Builder is Emergent's core feature. It lets you create full-stack web applications, mobile apps, and landing pages by describing what you want in natural language. An AI agent handles the design, coding, and deployment.
+Emergent runs every build inside a tab. The **App builder** chrome at the top
+of the page is the multi-tab shell that persists across navigation: the first
+slot is always `Home`, and each remixed, previewed, or generated build opens in
+its own closable tab to the right. A separate **Wingman** slot sits alongside
+the App builder pill for the agentic higher-capability mode.
 
-## The Home Dashboard
+<Frame caption="App builder chrome with the Home tab active and no builds open">
+  ![App builder — Home only](/images/0054_home_after_close_tab.png)
+</Frame>
 
-When you log in, you land on the home dashboard. This is your starting point for creating new apps.
+## Anatomy
 
-<img
-  src="/images/home-dashboard.png"
-  alt="Emergent Home Dashboard"
-/>
+<CardGroup cols={2}>
+  <Card title="App / Wingman switcher" icon="arrows-left-right">
+    Left-most pill toggles between the standard App builder and Wingman surfaces. Only one mode renders at a time.
+  </Card>
+  <Card title="Home tab" icon="house">
+    Fixed tab that always points at `/home`. Cannot be closed; holds the primary task form and Showcase.
+  </Card>
+  <Card title="Build tabs" icon="window-restore">
+    One tab per remix, preview, or active build. Each shows the project name and a close (✕) control.
+  </Card>
+  <Card title="New tab control" icon="plus">
+    The `+` button opens an empty tab that inherits the active project's context.
+  </Card>
+</CardGroup>
 
-### App Type Selection
+## Lifecycle
 
-Choose from three app types at the top of the prompt area:
+<Steps>
+  <Step title="Tab opens">
+    Submitting a task or clicking **Preview** / **Remix this template** on a Showcase card creates a new tab and routes the browser to `/chat`.
+  </Step>
+  <Step title="Tab runs">
+    The tab streams the live preview and agent log. Closing it does not cancel the underlying build; reopening reattaches.
+  </Step>
+  <Step title="Tab closes">
+    Clicking the ✕ on a tab returns focus to the previously active tab (or Home if it was the only build open).
+  </Step>
+</Steps>
 
-- **Full Stack App** — Complete web applications with frontend, backend, and database
-- **Mobile App** — Mobile-optimized applications
-- **Landing Page** — Marketing pages, product showcases, and single-page sites
+<Frame caption="Preview tab alongside Home in the App builder chrome">
+  ![Preview tab open](/images/0053_chat_preview_view.png)
+</Frame>
 
-### The Prompt Box
+<Frame caption="Preview panel detail — App builder tabs remain visible at the top">
+  ![Preview detail](/images/0052_showcase_preview_detail.png)
+</Frame>
 
-Type your app description in the text input. The more detail you provide, the better the result. You can include:
+## Related
 
-- Feature requirements
-- Design preferences (colors, layout, theme)
-- User flows and interactions
-- Technical requirements
-
-### Prompt Toolbar
-
-Below the prompt box you'll find several controls:
-
-| Control | Description |
-|---------|-------------|
-| **Attachment** | Upload files or images to provide context |
-| **Image upload** | Share design mockups or screenshots |
-| **Model selector** | Choose which AI model to use |
-| **Public/Private** | Set app visibility |
-| **Voice input** | Dictate your prompt using your microphone |
-
-## The Builder Interface
-
-After submitting your prompt, Emergent opens the builder interface with two panels:
-
-<img
-  src="/images/app-builder-complete.png"
-  alt="App builder interface"
-/>
-
-### Left Panel: Chat
-
-The chat panel shows the AI agent's progress as it builds your app:
-
-- **Agent status** — Shows "Agent is running..." while building, with animated status messages like "Connecting the pieces..." and "Getting the details right..."
-- **Command execution** — The agent runs terminal commands (viewing files, checking logs) that you can expand to inspect
-- **Message input** — Send follow-up messages to request changes or additions
-
-<img
-  src="/images/app-builder-agent.png"
-  alt="AI agent running commands"
-/>
-
-### Right Panel: App Preview
-
-The preview panel shows your app rendering in real time:
-
-- **Live preview** — See your app as it's being built inside an iframe
-- **Device modes** — Toggle between desktop, tablet, and mobile views
-- **Open in new tab** — View the app in a separate browser tab
-- **Refresh** — Reload the preview
-- **Share** — Generate a shareable link to your app
-- **Deploy** — Publish your app to a live URL
-
-### Bottom Toolbar
-
-The chat input includes additional tools:
-
-| Tool | Description |
-|------|-------------|
-| **Attachment** | Upload files to provide context for changes |
-| **Save** | Save your app to GitHub |
-| **Fork** | Create a copy of the current app |
-| **Ultra** | Toggle enhanced mode for more complex builds |
-| **Voice** | Use voice input for your messages |
-
-## Projects
-
-Apps are organized into projects. Click the project name at the top of the dashboard to switch between projects or create new ones.
-
-<img
-  src="/images/project-selector.png"
-  alt="Project selector"
-/>
-
-- **Switch projects** — Click any project to make it active
-- **Create new project** — Start a new project workspace
-
-## Templates and Showcase Apps
-
-Below the prompt area on the home page, you'll find quick-start template buttons (Wingman, My Counter Part, Bill Generator, Word of the Day) that pre-fill the prompt with a complete app description.
-
-You can also browse the **Showcase** section to see apps built by the community and remix them into your own projects.
-
-## Working with Tabs
-
-The top navigation bar supports multiple open apps as tabs. Each tab shows:
-
-- The app name
-- A colored dot indicating build status (green = building/active)
-- A close button
-
-Click the **+** button to open a new tab.
-
-## Tips for Better Results
-
-<AccordionGroup>
-  <Accordion title="Be specific about design">
-    Instead of "build a landing page," try "build a dark theme landing page with a hero section, feature grid, pricing cards, and a contact form."
-  </Accordion>
-  <Accordion title="Include user flows">
-    Describe how users will interact with your app: "Users sign up, create a profile, then can post and comment on other users' posts."
-  </Accordion>
-  <Accordion title="Iterate incrementally">
-    Start with a basic version and add features through follow-up messages rather than trying to describe everything upfront.
-  </Accordion>
-  <Accordion title="Use the right model">
-    Claude 4.5 Sonnet is great for most tasks. For complex apps, consider Claude 4.6 Opus or GPT 5.4.
-  </Accordion>
-</AccordionGroup>
+- [Home workspace](/guides/home) — the default `Home` tab.
+- [Live preview](/guides/preview) — what renders inside a build tab.
+- [Wingman](/guides/wingman) — the alternate agent surface accessible from the same chrome.

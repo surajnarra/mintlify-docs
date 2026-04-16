@@ -1,0 +1,59 @@
+---
+title: "Credit Usage"
+description: "Balance breakdown by credit source and per-project history filtered by date range, project, and event type."
+---
+
+## Overview
+
+**Credit Usage** is the rightmost tab in Account Settings. It combines a live
+balance card — split across plan, top-up, and free credit sources — with a
+filterable usage history that records every credit movement across your
+projects.
+
+<Frame caption="Credit Usage tab with balance breakdown and per-project history">
+  ![Credit Usage](/images/0012_settings_credit_usage.png)
+</Frame>
+
+## Balance breakdown
+
+<CardGroup cols={2}>
+  <Card title="Total available credits" icon="coin">
+    Aggregate of the three pools below — this is what the Buy Credits pill in the top chrome displays.
+  </Card>
+  <Card title="Plan credits" icon="tag">
+    Credits granted by the current subscription (e.g. `0/5` on the free tier). Refreshed every billing cycle.
+  </Card>
+  <Card title="Top-up credits" icon="plus">
+    Credits purchased outside the subscription. Never expire on their own.
+  </Card>
+  <Card title="Free credits" icon="gift">
+    Promotional or referral credits — for example the `Welcome Credits` grant that ships with every new account (`10/10`).
+  </Card>
+</CardGroup>
+
+## Usage history filters
+
+<Steps>
+  <Step title="Pick a date range">
+    Default is `Last week`. Widen the range to audit monthly spend or reconcile against receipts.
+  </Step>
+  <Step title="Filter by project">
+    `All projects` by default. Scope the list to a single workspace to diagnose one project's spend pattern.
+  </Step>
+  <Step title="Filter by type">
+    `All types` shows both credits earned (grants, top-ups) and credits consumed (agent runs). Narrow to a specific type for focused auditing.
+  </Step>
+</Steps>
+
+## Entries
+
+Each row displays: the date, the credit source label (`Free credits`,
+`Welcome Credits`, etc.), the project that earned or consumed them, and the
+signed delta (`+10` for grants, `-N` for spend). Totals on the right reflect
+credits used and running balance for the selected range.
+
+## Related
+
+- [Projects](/guides/projects) — the scoping primitive used in the history filter.
+- [Pricing](/guides/pricing) — plan credit allotments that refresh here.
+- [Buy credits](/guides/buy-credits) — top-up flow that feeds the Top-up credits bucket.

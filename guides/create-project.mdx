@@ -1,0 +1,57 @@
+---
+title: "Create a Project"
+description: "Modal for spinning up a fresh workspace with a randomizable avatar, custom name, and optional monthly credit budget."
+---
+
+## Overview
+
+**Create a project** is a focused modal launched from the workspace switcher.
+It collects three inputs — avatar, name, and optional monthly budget — then
+provisions an empty project that becomes the active workspace.
+
+<Frame caption="Create project modal with name and budget controls">
+  ![Create a project modal](/images/0043_create_new_project_modal.png)
+</Frame>
+
+## Fields
+
+<CardGroup cols={2}>
+  <Card title="Avatar" icon="shuffle">
+    A generated gradient circle identifies the project in the switcher. The **Randomize avatar gradient** button regenerates it until you pick one you like.
+  </Card>
+  <Card title="Project name" icon="pen">
+    Free-text name, placeholder `ex: Resume analyzer, Client A, Side project`. Shown in the switcher, project pill, and credit history.
+  </Card>
+  <Card title="Project budget" icon="gauge-high">
+    Toggle **Enable monthly limit** to cap spend. Without a limit, the project inherits the plan's global credit allotment.
+  </Card>
+  <Card title="Learn more" icon="book">
+    Inline link to <a href="https://help.emergent.sh/articles/205415-getting-started-with-projects">help.emergent.sh's Getting Started with Projects</a> article.
+  </Card>
+</CardGroup>
+
+## Flow
+
+<Steps>
+  <Step title="Open the switcher">
+    Click the project pill above the Home hero, then choose **Create new project**.
+  </Step>
+  <Step title="Name the project">
+    Enter a short, descriptive name. Randomize the avatar if the default gradient doesn't match.
+  </Step>
+  <Step title="Set an optional budget">
+    Toggle **Enable monthly limit** and type a credit cap to enforce per-project spend limits; otherwise the project inherits the plan default.
+  </Step>
+  <Step title="Create">
+    Click **Create Project** to provision the workspace. Emergent sets it active and returns you to Home.
+  </Step>
+</Steps>
+
+<Frame caption="Initial modal state before any fields are filled in">
+  ![Create project initial state](/images/0042_create_new_project_modal.png)
+</Frame>
+
+## Related
+
+- [Projects](/guides/projects) — switcher and membership overview.
+- [Credit usage](/guides/credit-usage) — where budgets show up after creation.

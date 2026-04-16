@@ -1,0 +1,77 @@
+---
+title: "Advanced Controls"
+description: "Per-task overrides for MCP tools, container template, and model — opened from the settings cog on the task input."
+---
+
+## Overview
+
+The gear icon on the task input opens a compact **Advanced Controls** panel
+that exposes three per-task overrides. Each override applies only to the next
+submitted task; default values persist across sessions through account
+preferences.
+
+<Frame caption="Advanced Controls panel open under the task input">
+  ![Advanced controls popover](/images/0014_task_settings_popover.png)
+</Frame>
+
+## Controls
+
+<CardGroup cols={2}>
+  <Card title="Select MCPs to use" icon="plug">
+    Launch the MCP picker to connect external tools before the agent runs. See [MCP tools](/guides/mcp-tools).
+  </Card>
+  <Card title="Select Template" icon="box">
+    Pick the container image used as the agent's working environment. The default is Emergent's canonical FastAPI + React + Mongo base.
+  </Card>
+  <Card title="Model" icon="brain">
+    Override the default LLM for this task. The baseline is **Claude 4.5 Sonnet**.
+  </Card>
+  <Card title="Persist as default" icon="floppy-disk">
+    Changes stick for the current task only; update `Account Settings → Preferences` to reshape defaults.
+  </Card>
+</CardGroup>
+
+## Template selector
+
+Templates are container image references published under
+`us-central1-docker.pkg.dev/emergent-default/emergent-container-hub/`. The
+default template for Full Stack App mode is
+`fastapi_react_mongo_shadcn_base_image`, which gives the agent a ready
+Python + React + Mongo toolchain plus shadcn UI primitives.
+
+<Frame caption="Template selector dropdown listing container image options">
+  ![Template selector](/images/0016_template_selector.png)
+</Frame>
+
+## Model picker
+
+The model selector is surfaced both on the task input (inline pill labelled
+**Claude 4.5 Sonnet**) and again inside Advanced Controls. Opening the picker
+lists available frontier models; access to specific models may depend on your
+active plan.
+
+<Frame caption="Inline model selector state on the task input">
+  ![Model selector inline](/images/0005_model_selector_dropdown.png)
+</Frame>
+
+<Frame caption="Model picker dropdown expanded via the inline selector">
+  ![Model picker dropdown](/images/0045_model_picker_dropdown.png)
+</Frame>
+
+<Frame caption="Model picker after a second activation">
+  ![Model selector open](/images/0046_model_selector_open.png)
+</Frame>
+
+<Frame caption="Model popover rendered above the submit row">
+  ![Model popover](/images/0047_model_popover.png)
+</Frame>
+
+<Frame caption="Model picker opened from within Advanced Controls">
+  ![Model picker from advanced controls](/images/0048_model_picker_open_bypass.png)
+</Frame>
+
+## Related
+
+- [MCP tools](/guides/mcp-tools) — enable and configure MCP connectors.
+- [Preferences](/guides/preferences) — change the defaults that this panel overrides.
+- [Home workspace](/guides/home) — the task input this panel anchors to.

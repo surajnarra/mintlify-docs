@@ -1,69 +1,54 @@
 ---
-title: Universal Key
-description: "One API key for all your LLM needs"
+title: "Universal Key"
+description: "Single sk-emergent API key that routes LLM calls to every supported provider and auto-recharges from a pooled credit balance."
 ---
 
-# Universal Key
+## Overview
 
-The Universal Key is a single API key that gives you access to all LLM providers supported by Emergent — no need to juggle multiple provider keys.
+The **Universal Key** is Emergent's provider-agnostic credential: one
+`sk-emergent-…` token that can be used in any OpenAI-compatible SDK call and
+will fan out to Anthropic, OpenAI, Google, or other supported providers based
+on the model you request. It is managed entirely inside Account Settings and
+ships with a separate pooled balance that auto-recharges from your main
+account.
 
-<img
-  src="/images/universal-key.png"
-  alt="Universal Key settings"
-/>
+<Frame caption="Universal Key tab with masked key, balance, and auto-recharge">
+  ![Universal Key](/images/0009_settings_universal_key.png)
+</Frame>
 
-## Accessing Your Key
+## Panels
 
-Open **Account Settings** and click the **Universal Key** tab.
+<CardGroup cols={2}>
+  <Card title="Key Details" icon="key">
+    Shows the masked key (e.g. `sk-emergent-86••••`) with **Disable** and **Regenerate** actions. Disabling invalidates the key immediately; regenerating rotates it and invalidates the previous value.
+  </Card>
+  <Card title="LLM Providers" icon="diagram-project">
+    Tab for enabling or disabling routing to individual providers. Useful for cost or compliance constraints when you want certain providers off the routing table.
+  </Card>
+  <Card title="API Key Balance" icon="wallet">
+    Separate credit pool that API requests draw from. The default **Add Balance** action lets you top up without changing your subscription.
+  </Card>
+  <Card title="Auto Recharge" icon="arrows-rotate">
+    Toggle that automatically refills the key balance by a configurable number of credits when it hits zero. The default refill amount is `5` credits.
+  </Card>
+</CardGroup>
 
-## Key Details
+## Safe rotation
 
-Your Universal Key section includes:
+<Steps>
+  <Step title="Pre-stage a new key">
+    Click **Regenerate** and copy the new value immediately — it is only fully visible once.
+  </Step>
+  <Step title="Update downstream consumers">
+    Swap the key in any SDK config, environment variable, or secret manager that uses the Emergent endpoint.
+  </Step>
+  <Step title="Verify recharge settings">
+    Confirm the API Key Balance and Auto Recharge thresholds match your expected workload before resuming traffic.
+  </Step>
+</Steps>
 
-### Your Key
+## Related
 
-Your API key is displayed in a masked format (e.g., `sk-emergent-bE*****`). Use the controls to:
-
-- **Copy** — Copy the key to your clipboard
-- **Disable** — Temporarily deactivate the key
-- **Regenerate** — Create a new key (the old key will stop working)
-
-<Warning>
-  Regenerating your key will invalidate the previous key immediately. Update any applications using the old key.
-</Warning>
-
-### API Key Balance
-
-Your Universal Key has its own credit balance, separate from your main account balance. This lets you control API spending independently.
-
-- **Current balance** — Shows available credits for API usage
-- **Add Balance** — Purchase additional API credits
-
-### Auto Recharge
-
-Enable automatic recharging to keep your API uninterrupted:
-
-- **Amount** — Set how many credits to add when the balance hits zero (default: 5 credits)
-- **Toggle** — Enable or disable auto-recharge
-
-## LLM Providers
-
-Click the **LLM Providers** tab to see all available AI model providers accessible through your Universal Key. Use the key with any compatible API client by pointing it at Emergent's API endpoint.
-
-## Using the Universal Key
-
-Use your Universal Key like any standard LLM API key. Point your API client to Emergent's endpoint and include the key in the authorization header:
-
-```bash
-curl https://api.emergent.sh/v1/chat/completions \
-  -H "Authorization: Bearer sk-emergent-your-key-here" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "claude-4.5-sonnet",
-    "messages": [{"role": "user", "content": "Hello!"}]
-  }'
-```
-
-<Tip>
-  The Universal Key is especially useful if you want to use Emergent-supported models in your own applications without managing separate API keys for each provider.
-</Tip>
+- [Credit usage](/guides/credit-usage) — where pooled credits land after a recharge.
+- [Pricing](/guides/pricing) — subscription tiers that fund the main credit pool.
+- [MCP tools](/guides/mcp-tools) — complementary primitive for tool access.

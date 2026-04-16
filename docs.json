@@ -1,0 +1,120 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Emergent Documentation",
+  "description": "Reference and guides for the Emergent agentic app builder.",
+  "colors": {
+    "primary": "#2563eb",
+    "light": "#60a5fa",
+    "dark": "#1e3a8a"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "index",
+              "docs/getting-started"
+            ]
+          },
+          {
+            "group": "Core Platform",
+            "pages": [
+              "guides/home",
+              "guides/app-builder",
+              "guides/templates-showcase",
+              "guides/preview"
+            ]
+          },
+          {
+            "group": "Projects",
+            "pages": [
+              "guides/projects",
+              "guides/create-project"
+            ]
+          },
+          {
+            "group": "Build Controls",
+            "pages": [
+              "guides/task-advanced-controls",
+              "guides/mcp-tools",
+              "guides/github-integration",
+              "guides/wingman"
+            ]
+          },
+          {
+            "group": "Account",
+            "pages": [
+              "guides/account-settings",
+              "guides/universal-key",
+              "guides/manage-agents",
+              "guides/preferences",
+              "guides/language"
+            ]
+          },
+          {
+            "group": "Billing",
+            "pages": [
+              "guides/pricing",
+              "guides/credit-usage",
+              "guides/buy-credits",
+              "guides/referrals"
+            ]
+          },
+          {
+            "group": "Platform",
+            "pages": [
+              "guides/ip-addresses",
+              "guides/terms",
+              "guides/privacy"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/sitemap",
+              "reference/url-map",
+              "reference/permissions",
+              "reference/keyboard-shortcuts",
+              "reference/glossary"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Website",
+          "href": "https://emergent.sh",
+          "icon": "globe"
+        },
+        {
+          "anchor": "Help Center",
+          "href": "https://help.emergent.sh",
+          "icon": "circle-question"
+        }
+      ]
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "App",
+        "href": "https://app.emergent.sh"
+      },
+      {
+        "label": "Official Site",
+        "href": "https://emergent.sh"
+      }
+    ]
+  }
+}

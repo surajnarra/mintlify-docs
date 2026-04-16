@@ -1,0 +1,65 @@
+---
+title: "Permissions"
+description: "Role model, plan-gated features, and capability matrix for the Emergent platform."
+---
+
+## Roles
+
+Emergent scopes membership to the Project primitive. Each account belongs to
+one or more projects and assumes a role inside each.
+
+| Role     | Description                                                                 |
+|----------|-----------------------------------------------------------------------------|
+| Owner    | Account that created the project. Full control: invite, delete, billing.     |
+| Member   | Collaborator invited by the Owner. Can submit tasks, view credits and previews. Cannot delete the project or change billing. |
+| Guest    | Read-only or limited contributor. Tasks route through an Owner-approved model and MCP allow list. |
+
+The Workspace switcher labels the current project with `Owner • N member(s)` so
+the active role is always visible.
+
+## Plan gates
+
+The following capabilities are gated by subscription tier:
+
+| Capability                     | Free | Standard | Pro |
+|--------------------------------|:----:|:--------:|:---:|
+| Full Stack App builds          | ✅   | ✅       | ✅  |
+| Landing Page builds            | ✅   | ✅       | ✅  |
+| Public project hosting         | ✅   | ✅       | ✅  |
+| Plan credits (monthly)         | 5    | 100      | 750 |
+| Mobile App Development         | ❌   | ✅       | ✅  |
+| Private project hosting        | ❌   | ✅       | ✅  |
+| GitHub integration             | ❌   | ✅       | ✅  |
+| Fork tasks                     | ❌   | ✅       | ✅  |
+| Ability to buy additional credits | ❌ | ✅    | ✅  |
+| E2 Agent                       | ❌   | ❌       | ✅  |
+| 1M context window              | ❌   | ❌       | ✅  |
+| Advanced Analytics             | ❌   | ❌       | ✅  |
+| Ultra thinking                 | ❌   | ❌       | ✅  |
+| System Prompt Edit             | ❌   | ❌       | ✅  |
+| Ability to build Custom Agents | ❌   | ❌       | ✅  |
+| Wingman (Beta)                 | ❌   | ✅       | ✅  |
+
+## Account-level permissions
+
+| Action                          | Notes                                                                 |
+|---------------------------------|-----------------------------------------------------------------------|
+| Regenerate Universal Key        | Owner only. Invalidates previous key instantly.                       |
+| Change auto-recharge threshold  | Owner only. Applies to the Universal Key pool.                        |
+| Connect GitHub account          | Requires Standard plan and repo-level GitHub App installation.        |
+| Edit display name               | Any member can edit their own display name on the Profile tab.        |
+| Cancel subscription             | Owner only. Downgrades the project after the current billing cycle.   |
+| Revoke GitHub connection        | Owner only. Removes the Emergent GitHub App from the authorized repos. |
+
+## Project-level permissions
+
+| Action                 | Owner | Member | Guest |
+|------------------------|:-----:|:------:|:-----:|
+| Submit a task          | ✅    | ✅     | ✅    |
+| Create a tab           | ✅    | ✅     | ✅    |
+| Remix a showcase app   | ✅    | ✅     | ✅    |
+| View credit usage      | ✅    | ✅     | ❌    |
+| Change project budget  | ✅    | ❌     | ❌    |
+| Invite members         | ✅    | ❌     | ❌    |
+| Delete project         | ✅    | ❌     | ❌    |
+| Connect GitHub repo    | ✅    | ❌     | ❌    |

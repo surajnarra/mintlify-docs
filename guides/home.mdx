@@ -1,0 +1,115 @@
+---
+title: "Home Workspace"
+description: "The main Emergent surface where a prompt, build mode, and model selection turn into a running agent task."
+---
+
+## Overview
+
+`Home` is the default landing surface at `/home` and the first tab in the App
+builder chrome. It pairs a marketing header ("Where ideas become reality")
+with a fully configurable task form: project scope, build-mode selector, prompt
+textarea, and submission row with model, visibility, voice, and template
+controls. Below the form sits a scrollable Showcase of community-built apps and
+a closing "Start building with Emergent today" CTA.
+
+<Frame caption="Home — primary view with the Full Stack App build mode selected">
+  ![Home dashboard](/images/0002_home_dashboard.png)
+</Frame>
+
+## Layout
+
+<CardGroup cols={2}>
+  <Card title="Top chrome" icon="window">
+    Left: App/Wingman switcher and open tabs. Right: Buy Credits, referral gift icon, notifications bell, and the account avatar.
+  </Card>
+  <Card title="Project pill" icon="folder">
+    A colored capsule directly above the hero shows the active project (`Extrupeers's Project` by default). Clicking it opens the workspace switcher.
+  </Card>
+  <Card title="Build mode tabs" icon="layer-group">
+    **Full Stack App**, **Mobile App**, and **Landing Page** reshape the prompt placeholder, suggestion chips, and default container template.
+  </Card>
+  <Card title="Task form" icon="pen-to-square">
+    Multiline textarea, GitHub connector, model picker, visibility toggle, task settings popover, voice record, and the submit arrow.
+  </Card>
+</CardGroup>
+
+## Build modes
+
+<Frame caption="Mobile App mode — placeholder and chips shift to mobile ideas">
+  ![Mobile App build mode](/images/0003_home_mobile_tab.png)
+</Frame>
+
+Switching to **Mobile App** changes the placeholder to "Build me a fitness
+tracking app…" and swaps the suggestion chips to `Flappy Bird Game`,
+`Recipe Generator`, and `Habit Tracker`.
+
+<Frame caption="Landing Page mode — marketing-oriented suggestions">
+  ![Landing Page build mode](/images/0004_home_landing_tab.png)
+</Frame>
+
+**Landing Page** mode switches to "Build me a beautiful landing page for…"
+with `Consult Plus`, `Elite Footwear`, and `Smart Course` as starter chips.
+
+## Task input
+
+<Steps>
+  <Step title="Type or dictate">
+    Use the textarea directly, or press the microphone button to dictate. Mouse focus activates the form without changing the build mode.
+  </Step>
+  <Step title="Pick a suggestion">
+    Click any chip (for example `My Counter Part`) to populate the textarea with a starter brief; the agent still expects you to refine the prompt before submission.
+  </Step>
+  <Step title="Set visibility">
+    The **Public** pill toggles between Public and Private publishing. Public projects are eligible for the Showcase; Private projects require a Standard plan or above.
+  </Step>
+  <Step title="Submit">
+    Click the upward arrow to queue the task. A new preview tab opens in the App builder chrome.
+  </Step>
+</Steps>
+
+<Frame caption="Task input after a prompt is typed in">
+  ![Typed task input](/images/0032_task_input_typed.png)
+</Frame>
+
+<Frame caption="Task input with a full prompt ready to submit">
+  ![Prompt text in task input](/images/0065_task_with_prompt_text.png)
+</Frame>
+
+<Frame caption="Voice dictation active on the task input">
+  ![Voice record state](/images/0061_voice_record_state.png)
+</Frame>
+
+<Frame caption="Visibility pill interaction (Public shown)">
+  ![Visibility selector](/images/0041_visibility_selector.png)
+</Frame>
+
+## Suggestion chips
+
+Each build mode ships with three suggestion chips plus a Wingman Beta entry
+point that preview the kinds of builds Emergent is tuned for. Clicking a chip
+populates the textarea without submitting.
+
+<Frame caption="Suggestion chip behavior after interaction">
+  ![Suggestion chip interaction](/images/0049_suggestion_clicked.png)
+</Frame>
+
+## Scroll view and CTA
+
+<Frame caption="Initial view above the fold on Home">
+  ![Home initial](/images/0001_home_initial.png)
+</Frame>
+
+<Frame caption="Full Home view including Showcase preview and footer CTA">
+  ![Home full overview](/images/0056_home_full_overview.png)
+</Frame>
+
+<Frame caption="Keep Building CTA at the bottom of the scroll view">
+  ![Keep building CTA](/images/0055_get_started_clicked.png)
+</Frame>
+
+## Related
+
+- [App builder](/guides/app-builder) — tabbed chrome that hosts Home and every build preview.
+- [Templates & Showcase](/guides/templates-showcase) — the community gallery that runs below the task form.
+- [Advanced controls](/guides/task-advanced-controls) — MCP, template, and model configuration for the task.
+- [Projects](/guides/projects) — scope tasks to a workspace and track spend.
